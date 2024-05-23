@@ -1,0 +1,5 @@
+../__pycache
+venv/
+dados.json
+functions/createLead.py
+credentials.json
