@@ -3,3 +3,4 @@ venv/
 dados.json
 functions/createLead.py
 credentials.json
+.env
