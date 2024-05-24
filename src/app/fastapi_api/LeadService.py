@@ -15,14 +15,8 @@ def create_lead(lead_data: LeadModel):
         lead_data.id,
         lead_data.pergunta
     )
+    print(response)
     
-    status_code_by_response = {
-        "success": status.HTTP_201_CREATED,
-        "error": status.HTTP_400_BAD_REQUEST,
-    }
-
-    status_code = status_code_by_response.get(response.get("message"), status.HTTP_400_BAD_REQUEST)
-    
-    return JSONResponse(content=response, status_code=status_code)
+    return JSONResponse(content=response, status_code=200)
 
     

@@ -17,7 +17,7 @@ class LeadRepository(ABCLeadRepository):
         print(lead.to_dict())
 
         request = {
-            "duplicityValidation": "true",
+            "duplicityValidation": "false",
             "lead": {
                 "name": lead.name,
                 "ddiPhone": "55",
