@@ -33,4 +33,4 @@ class LeadRepository(ABCLeadRepository):
         
         print(response.json())
 
-        return {"message": "created", "status_code": response.status_code}
+        return {"message": "created", "status_code": 200}
