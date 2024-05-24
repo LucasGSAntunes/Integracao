@@ -11,8 +11,9 @@ def create_lead(lead_data: LeadModel):
     response = LeadUseCase().create_lead(
         lead_data.name,
         lead_data.phone,
-        lead_data.perguntas,
+        lead_data.area,
         lead_data.id,
+        lead_data.pergunta
     )
     
     status_code_by_response = {

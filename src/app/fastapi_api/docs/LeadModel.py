@@ -5,8 +5,7 @@ from pydantic import BaseModel
 class LeadModel(BaseModel):
     name: str
     phone: str
-    perguntas: Dict
-    id: int
+    area: str
+    id: str
     source: str
-    created_at: str
-    updated_at: str
+    pergunta: str

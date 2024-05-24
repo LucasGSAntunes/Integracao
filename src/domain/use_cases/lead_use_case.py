@@ -15,12 +15,17 @@ class LeadUseCase:
             self, 
             name: str, 
             phone: str, 
-            perguntas: Dict[str, str],
-            id: str = None
+            area: str,
+            id: str = None,
+            pergunta: str = None,
         ) -> Dict:
         source = "Respondi"
+        descricao = {
+            "area": area,
+            "pergunta": pergunta,
+        }
 
-        lead = Lead(name, phone, perguntas, id, source)
+        lead = Lead(name, phone, descricao, id, source)
         return self.data_acess.create(lead)
     
     def webhook(
