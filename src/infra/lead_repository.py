@@ -13,8 +13,10 @@ class LeadRepository(ABCLeadRepository):
             "Content-Type": "application/json",
             "token_exact": token,
         }
+        
+        print(lead.to_dict())
 
-        body = {
+        request = {
             "duplicityValidation": "true",
             "lead": {
                 "name": lead.name,
@@ -25,7 +27,9 @@ class LeadRepository(ABCLeadRepository):
             }
         }
 
-        response = requests.post(url, headers=headers, json=body)
+        response = requests.post(url, headers=headers, json=request)
+        
+        print(response.json())
 
         if response.status_code == 200:
             return response.json()
