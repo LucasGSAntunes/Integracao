@@ -1,9 +1,12 @@
-from fastapi import FastAPI, HTTPException
-from functions.filterData import filterData
+from fastapi import FastAPI
 from models.LeadModel import Lead
 
-app = FastAPI()
-
+app = FastAPI(
+    title="API de Integração",
+    description="API para integração de dados",
+    version="0.1",
+    docs_url="/docs",
+)
 
 @app.get("/")
 async def root():
@@ -12,9 +15,3 @@ async def root():
 @app.post("/data/")
 async def get_data(dados: Lead):
     return dados
-
-
-
-if __name__ == "__main__":
-    import uvicorn
-    uvicorn.run(app, host="0.0.0.0", port=8000)
