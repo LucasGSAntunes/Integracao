@@ -4,12 +4,13 @@ import json
 
 from src.domain.interfaces.abstract_repositories import ABCLeadRepository
 from src.domain.entities.lead import Lead
+from src.infra.lead_repository import LeadRepository
 
 class LeadUseCase:
-    repository: None
+    repository: ABCLeadRepository = LeadRepository()
 
     def __init__(self):
-        self.data_acess: ABCLeadRepository = self.repository()
+        self.data_acess: ABCLeadRepository = LeadRepository()
     
     def create_lead(
             self, 
