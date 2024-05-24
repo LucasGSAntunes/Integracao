@@ -8,6 +8,7 @@ lead_router = APIRouter(prefix="/lead", tags=["Lead"])
 
 @lead_router.post("", response_model=LeadModel)
 def create_lead(lead_data: LeadModel):
+    print(lead_data)
     response = LeadUseCase().create_lead(
         lead_data.name,
         lead_data.phone,
@@ -16,7 +17,7 @@ def create_lead(lead_data: LeadModel):
         lead_data.pergunta
     )
     print(response)
-    
+
     return JSONResponse(content=response, status_code=200)
 
     
