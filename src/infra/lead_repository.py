@@ -27,11 +27,13 @@ class LeadRepository(ABCLeadRepository):
             }
         }
 
+        print(request)
+
         response = requests.post(url, headers=headers, json=request)
         
         print(response.json())
 
-        if response.status_code == 200:
+        if response.status_code == 201:
             return response.json()
         else:
             return {"message": "error", "response": response.text}

@@ -21,10 +21,7 @@ class LeadUseCase:
             pergunta: str = None,
         ) -> Dict:
         source = "Respondi"
-        descricao = {
-            "area": area,
-            "pergunta": pergunta,
-        }
+        descricao = f'{id}: {area}, {pergunta}'
 
 
         lead = Lead(name, phone, descricao, id, source)
