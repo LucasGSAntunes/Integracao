@@ -26,18 +26,11 @@ class LeadUseCase:
             "pergunta": pergunta,
         }
 
+
         lead = Lead(name, phone, descricao, id, source)
+        
+        if not lead.is_valid():
+            return {"message": "lead isn't valid"}
+        
         return self.data_acess.create(lead)
     
-    def webhook(
-            self, 
-            name: str, 
-            phone: str, 
-            perguntas: Dict[str, str],
-            id: str = None
-        ) -> Dict:
-        source = "Respondi"
-
-        lead = Lead(name, phone, perguntas, id, source)
-
-        return self.data_acess.create(lead)
