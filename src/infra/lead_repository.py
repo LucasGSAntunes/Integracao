@@ -20,7 +20,7 @@ class LeadRepository(ABCLeadRepository):
                 "name": lead.name,
                 "ddiPhone": "55",
                 "phone": lead.phone,
-                "description": lead.perguntas,
+                "description": lead.descricao,
                 "source": lead.source,
             }
         }
