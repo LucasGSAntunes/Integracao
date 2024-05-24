@@ -1,5 +1,5 @@
 from fastapi import FastAPI
-from models.LeadModel import Lead
+from src.models.LeadModel import Lead
 
 app = FastAPI(
     title="API de Integração",
