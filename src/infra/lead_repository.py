@@ -33,7 +33,4 @@ class LeadRepository(ABCLeadRepository):
         
         print(response.json())
 
-        if response.status_code == 201:
-            return response.json()
-        else:
-            return {"message": "error", "response": response.text}
+        return {"message": "created", "status_code": response.status_code}
